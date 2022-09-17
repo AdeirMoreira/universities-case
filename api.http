@@ -1,0 +1,38 @@
+### create University
+POST http://localhost:3000/university
+Content-Type: application/json
+
+{
+    "domains": ["claeh.edu.uy"], 
+    "alpha_two_code": "UY", 
+    "country": "Uruguay", 
+    "web_pages": ["http://www.claeh.edu.uy/"], 
+    "name": "Insituto Universitario - Centro Latinoamericano de Economia Humana - IU Claeh"
+}
+
+### get all
+GET  http://localhost:3000/university
+
+### get by id
+GET  http://localhost:3000/university/6324d539c2b0c08507eeb71a
+
+### edit by id
+PATCH http://localhost:3000/university/6324daab5a357369ce2b6de7
+Content-Type: application/json
+
+{
+    "domains": ["teste"], 
+    "alpha_two_code": "te", 
+    "country": "teste", 
+    "web_pages": ["http://www.teste.com"], 
+    "name": "Insituto Universitario do teste"
+}
+
+### get by id
+DELETE http://localhost:3000/university/6324daab5a357369ce2b6de7
+
+### populate all
+POST http://localhost:3000/database
+
+### delete all
+DELETE  http://localhost:3000/database
