@@ -13,8 +13,11 @@ Content-Type: application/json
 ### get all
 GET  http://localhost:3000/university
 
+### get by page
+GET  http://localhost:3000/university/s?country=Brazil&page=3
+
 ### get by id
-GET  http://localhost:3000/university/6324d539c2b0c08507eeb71a
+GET  http://localhost:3000/university/63266218fd2c86222025ad6b
 
 ### edit by id
 PATCH http://localhost:3000/university/6324daab5a357369ce2b6de7

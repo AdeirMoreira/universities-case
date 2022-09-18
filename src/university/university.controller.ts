@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { UniversityService } from './university.service';
 import { CreateUniversityDto } from './dto/create-university.dto';
@@ -23,6 +24,11 @@ export class UniversityController {
   @Get()
   findAll() {
     return this.universityService.findAll();
+  }
+
+  @Get('s')
+  find(@Query('country') country: string, @Query('page') page: string) {
+    return this.universityService.find(country, +page);
   }
 
   @Get(':id')
