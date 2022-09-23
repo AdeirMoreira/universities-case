@@ -1,5 +1,5 @@
 ### create University
-POST http://localhost:3000/university
+POST http://localhost:3000/universities
 Content-Type: application/json
 
 {
@@ -11,31 +11,30 @@ Content-Type: application/json
 }
 
 ### get all
-GET  http://localhost:3000/university
+GET http://localhost:3000/universities
 
 ### get by page
-GET  http://localhost:3000/university/s?country=Brazil&page=3
+GET http://localhost:3000/universities/s?country=Brazil&page=0
 
 ### get by id
-GET  http://localhost:3000/university/63266218fd2c86222025ad6b
+GET http://localhost:3000/universities/632e151059b2ed9daf8a3c96
 
 ### edit by id
-PATCH http://localhost:3000/university/6324daab5a357369ce2b6de7
+PATCH http://localhost:3000/universities/632e151059b2ed9daf8a3c96
 Content-Type: application/json
 
 {
     "domains": ["teste"], 
     "alpha_two_code": "te", 
-    "country": "teste", 
     "web_pages": ["http://www.teste.com"], 
     "name": "Insituto Universitario do teste"
 }
 
-### get by id
-DELETE http://localhost:3000/university/6324daab5a357369ce2b6de7
+### delete by id
+DELETE http://localhost:3000/universities/632e15b309608d52736a0eda
 
 ### populate all
 POST http://localhost:3000/database
 
 ### delete all
-DELETE  http://localhost:3000/database
+DELETE http://localhost:3000/database

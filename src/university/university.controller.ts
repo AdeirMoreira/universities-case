@@ -11,8 +11,10 @@ import {
 import { UniversityService } from './university.service';
 import { CreateUniversityDto } from './dto/create-university.dto';
 import { UpdateUniversityDto } from './dto/update-university.dto';
+import { idParam } from './dto/idParam.dto';
+import { queryParams } from './dto/queryParams.dto';
 
-@Controller('university')
+@Controller('universities')
 export class UniversityController {
   constructor(private readonly universityService: UniversityService) {}
 
@@ -27,25 +29,25 @@ export class UniversityController {
   }
 
   @Get('s')
-  find(@Query('country') country: string, @Query('page') page: string) {
-    return this.universityService.find(country, +page);
+  find(@Query() query: queryParams) {
+    return this.universityService.find(query.country, query.page);
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.universityService.findOne(id);
+  findOne(@Param() param: idParam) {
+    return this.universityService.findOne(param.id);
   }
 
   @Patch(':id')
   update(
-    @Param('id') id: string,
+    @Param() param: idParam,
     @Body() updateUniversityDto: UpdateUniversityDto,
   ) {
-    return this.universityService.update(id, updateUniversityDto);
+    return this.universityService.update(param.id, updateUniversityDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.universityService.remove(id);
+  remove(@Param() param: idParam) {
+    return this.universityService.remove(param.id);
   }
 }
