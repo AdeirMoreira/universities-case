@@ -17,10 +17,10 @@ GET http://localhost:3000/universities
 GET http://localhost:3000/universities/s?country=Brazil&page=0
 
 ### get by id
-GET http://localhost:3000/universities/632e151059b2ed9daf8a3c96
+GET http://localhost:3000/universities/55153a8014829a865bbf700d
 
 ### edit by id
-PATCH http://localhost:3000/universities/632e151059b2ed9daf8a3c96
+PATCH http://localhost:3000/universities/507f191e810c19729de860ea
 Content-Type: application/json
 
 {
@@ -31,7 +31,7 @@ Content-Type: application/json
 }
 
 ### delete by id
-DELETE http://localhost:3000/universities/632e15b309608d52736a0eda
+DELETE http://localhost:3000/universities/632f4439d764db069af0b5f7
 
 ### populate all
 POST http://localhost:3000/database
