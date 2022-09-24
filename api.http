@@ -14,7 +14,7 @@ Content-Type: application/json
 GET http://localhost:3000/universities
 
 ### get by page
-GET http://localhost:3000/universities/s?country=Brazil&page=0
+GET http://localhost:3000/universities/s?country=Brazil&page=1
 
 ### get by id
 GET http://localhost:3000/universities/55153a8014829a865bbf700d

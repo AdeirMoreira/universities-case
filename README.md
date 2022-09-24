@@ -2,72 +2,77 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# API de Universidades 👩‍🎓🎓👨‍🎓 
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+Essa API foi desenvolvida para o case da Bis2Bis. Trata-se de um script para popular o banco de dados com registros de todas as universidades dos países da America do Sul, além de um CRUD dessas informações no banco de dados. Além do [NodeJS](https://nodejs.org/pt-br/) e do [NestJS](https://nestjs.com/), foi ultilzado o banco de dados [MongoDB](https://www.mongodb.com/), o framework [Moongose](https://mongoosejs.com/) para realizar a manipulação do banco de dados. Por fim, a documentação foi produzida utilizando o [Swagger](https://swagger.io/).
+
+## Tecnologias e Técnicas 🛠
+- [NodeJS](https://nodejs.org/pt-br/)
+- [NestJS](https://nestjs.com/)
+- [Moongose](https://mongoosejs.com/)
+- [MongoDB](https://www.mongodb.com/)
+- [Swagger](https://swagger.io/)
+- POO
+- S-O-L-I-D
+
+## Features ✔️ 
+
+- [x] Script para consultar uma API pública sobre universidades da América do Sul.
+- [x] CRUD dessas informações de universidades no banco de dados.
+- [x] Validação das informações enviadas com  menssagens de erros personalizados.
+
+## Preprarar o Ambiente 🔨🧱
+
+Clone e abra o projeto
+```
+git clone https://github.com/AdeirMoreira/universities-case.git
+cd universities-case
+```
+
+Para rodar o projeto você precisará do Node e do NestJS na sua máquina
+- [NodeJS](https://nodejs.org/pt-br/download/) 
+- [NestJS](https://docs.nestjs.com/)
+
+Para instalar o Nest rode o comando:
+```
+npm i -g @nestjs/cli
+```
+Para instalar instalar as dependecias do projeto:
+```
+npm install
+```
+## Execuntar o projeto 🔛
+
+Para rodar o servidor na porta 3000
+```
+npm run start
+```
+Com o servidor online, a documentação detalhada sobre cada endpoint produzida com o Swagger pode ser encontrada no link http://localhost:3000/docs
+
+Caso deseje começar a utilizar a API com o banco de dados populado, você pode popula-lo de duas formas:
+- 1° Por meio do endpoint 
+```
+POST http://localhost:3000/database
+```
+- 2° com o comando
+```
+npm run populate
+```
+Ambas as formas popularão o banco de dados com todos os registros das universidades da América do Sul
+
+## Testando os endpoints ▶
+Voçe pode testar os endpoints da API de duas formas:
+- 1° Por meio  documentação 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/98994187/188336247-4d993303-4236-4ce2-8e69-422008b105a9.png" width="600" height="400" alt="Nest Logo" />
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+- 2° Por meio do arquivo api.http
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/98994187/188336247-4d993303-4236-4ce2-8e69-422008b105a9.png" width="600" height="400" alt="Nest Logo" />
+</p>
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+<h2 id="desenvolvedores">👨‍💻 Desenvolvedores</h2>
+<table>         
+<td><a href="https://github.com/future4code/silveira-Adeir-Maia"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/98994187?v=4" width="100px;" alt="Imagem profile Adeir Moreira desenvolvedor"/><br /><sub><b>Adeir Moreira</b></sub></a><br />   
+</table>
