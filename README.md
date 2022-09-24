@@ -4,7 +4,7 @@
 
 # API de Universidades 👩‍🎓🎓👨‍🎓 
 
-Essa API foi desenvolvida para o case da Bis2Bis. Trata-se de um script para popular o banco de dados com registros de todas as universidades dos países da America do Sul, além de um CRUD dessas informações no banco de dados. Além do [NodeJS](https://nodejs.org/pt-br/) e do [NestJS](https://nestjs.com/), foi ultilzado o banco de dados [MongoDB](https://www.mongodb.com/), o framework [Moongose](https://mongoosejs.com/) para realizar a manipulação do banco de dados. Por fim, a documentação foi produzida utilizando o [Swagger](https://swagger.io/).
+Essa API foi desenvolvida para o case da Bis2Bis. Trata-se de um script para popular o banco de dados com registros de todas as universidades dos países da America do Sul, além de um CRUD dessas informações no banco de dados. Além do [NodeJS](https://nodejs.org/pt-br/) e do [NestJS](https://nestjs.com/), foi utilzado o banco de dados [MongoDB](https://www.mongodb.com/) e o framework [Moongose](https://mongoosejs.com/) para realizar a manipulação do banco de dados. Por fim, a documentação foi produzida utilizando o [Swagger](https://swagger.io/).
 
 ## Tecnologias e Técnicas 🛠
 - [NodeJS](https://nodejs.org/pt-br/)
@@ -21,7 +21,7 @@ Essa API foi desenvolvida para o case da Bis2Bis. Trata-se de um script para pop
 - [x] CRUD dessas informações de universidades no banco de dados.
 - [x] Validação das informações enviadas com  menssagens de erros personalizados.
 
-## Preprarar o Ambiente 🔨🧱
+## Preparar o Ambiente 🔨🧱
 
 Clone e abra o projeto
 ```
@@ -37,11 +37,11 @@ Para instalar o Nest rode o comando:
 ```
 npm i -g @nestjs/cli
 ```
-Para instalar instalar as dependecias do projeto:
+Para instalar as dependêcias do projeto:
 ```
 npm install
 ```
-## Execuntar o projeto 🔛
+## Executar o projeto 🔛
 
 Para rodar o servidor na porta 3000
 ```
@@ -64,12 +64,12 @@ Ambas as formas popularão o banco de dados com todos os registros das universid
 Voçe pode testar os endpoints da API de duas formas:
 - 1° Por meio  documentação 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/98994187/188336247-4d993303-4236-4ce2-8e69-422008b105a9.png" width="600" height="400" alt="Nest Logo" />
+  <img src="https://user-images.githubusercontent.com/98994187/192119055-49890f50-47c0-4089-a3dd-f88195d6c081.png" width="600" height="400" alt="Nest Logo" />
 </p>
 
 - 2° Por meio do arquivo api.http
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/98994187/188336247-4d993303-4236-4ce2-8e69-422008b105a9.png" width="600" height="400" alt="Nest Logo" />
+  <img src="https://user-images.githubusercontent.com/98994187/192119054-e29295d0-84a8-4c58-9bc0-13f5a63f241c.png" width="600" height="400" alt="Nest Logo" />
 </p>
 
 <h2 id="desenvolvedores">👨‍💻 Desenvolvedores</h2>
