@@ -12,14 +12,18 @@ Essa API foi desenvolvida para o case da Bis2Bis. Trata-se de um script para pop
 - [Moongose](https://mongoosejs.com/)
 - [MongoDB](https://www.mongodb.com/)
 - [Swagger](https://swagger.io/)
+- TypeScript
 - POO
 - S-O-L-I-D
 
 ## Features ✔️ 
 
-- [x] Script para consultar uma API pública sobre universidades da América do Sul.
-- [x] CRUD dessas informações de universidades no banco de dados.
-- [x] Validação das informações enviadas com  menssagens de erros personalizados.
+- ✅ Visualizar todas as universidades cadastradas
+- ✅ Visualizar universidades por país e página
+- ✅ Visualizar uma universidade específica
+- ✅Criar uma nova universidade
+- ✅ Editar uma universidade já criada
+- ✅ Deletar universidade
 
 ## Preparar o Ambiente 🔨🧱
 
@@ -47,16 +51,21 @@ Para rodar o servidor na porta 3000
 ```
 npm run start
 ```
+
+### Documentação do Swagger 📝
+
 Com o servidor online, a documentação detalhada sobre cada endpoint produzida com o Swagger pode ser encontrada no link http://localhost:3000/docs
 
 Caso deseje começar a utilizar a API com o banco de dados populado, você pode popula-lo de duas formas:
 - 1° Por meio do endpoint 
 ```
-POST http://localhost:3000/database
+ Popular -> POST http://localhost:3000/database
+ Despopular -> DELETE http://localhost:3000/database
 ```
 - 2° com o comando
 ```
-npm run populate
+ Popular -> npm run populate
+ Despopular -> npm run unpopulate
 ```
 Ambas as formas popularão o banco de dados com todos os registros das universidades da América do Sul
 
