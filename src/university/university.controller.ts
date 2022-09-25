@@ -38,6 +38,10 @@ export class UniversityController {
     status: HttpStatus.OK,
     description: 'A busca por todas as universidades foi um sucesso.',
   })
+  @ApiResponse({
+    status: HttpStatus.NOT_FOUND,
+    description: 'Não há nenhuma universidade cadastrada.',
+  })
   @Get()
   findAll() {
     return this.universityService.findAll();
@@ -51,6 +55,10 @@ export class UniversityController {
   @ApiResponse({
     status: HttpStatus.UNPROCESSABLE_ENTITY,
     description: 'As querys country ou page não estão corretas',
+  })
+  @ApiResponse({
+    status: HttpStatus.NOT_FOUND,
+    description: 'Não há nenhuma universidade cadastrada.',
   })
   @ApiQuery({
     name: 'country',
@@ -78,6 +86,10 @@ export class UniversityController {
     status: HttpStatus.UNPROCESSABLE_ENTITY,
     description: 'O Parametro id não está correto.',
   })
+  @ApiResponse({
+    status: HttpStatus.NOT_FOUND,
+    description: 'Não há nenhuma universidade cadastrada com o id informado',
+  })
   @ApiParam({
     name: 'id',
     required: true,
@@ -98,6 +110,10 @@ export class UniversityController {
     status: HttpStatus.UNPROCESSABLE_ENTITY,
     description:
       'O paramentro id ou alguma propiedade do corpo da requisição não está correto',
+  })
+  @ApiResponse({
+    status: HttpStatus.NOT_FOUND,
+    description: 'Não há nenhuma universidade cadastrada com o id informado',
   })
   @ApiParam({
     name: 'id',
@@ -121,6 +137,10 @@ export class UniversityController {
   @ApiResponse({
     status: HttpStatus.UNPROCESSABLE_ENTITY,
     description: 'O Parametro id não está correto.',
+  })
+  @ApiResponse({
+    status: HttpStatus.NOT_FOUND,
+    description: 'Não há nenhuma universidade cadastrada com o id informado',
   })
   @ApiParam({
     name: 'id',

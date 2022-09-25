@@ -1,4 +1,8 @@
-import { ConflictException, Injectable } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateUniversityDto } from './dto/create-university.dto';
@@ -21,32 +25,43 @@ export class UniversityService {
       name: createUniversityDto.name,
     });
     if (findUniversity) {
-      throw new ConflictException('Essa universidade já está cadastrada!');
+      throw new ConflictException('Essa universidade já está cadastrada.');
     }
     const university = new this.universityModel(createUniversityDto);
     return university.save();
   }
 
   async findAll() {
-    return this.refactor(
-      await this.universityModel.find({}, 'name country state-province'),
+    const result = await this.universityModel.find(
+      {},
+      'name country state-province',
     );
+    if (result.length !== 0) {
+      return this.refactor(result);
+    } else {
+      throw new NotFoundException({
+        message: 'Não há nenhuma universidade cadastrada.',
+      });
+    }
   }
 
   async find(country: string, page: number) {
-    return this.refactor(
-      await this.universityModel
-        .find({ country }, 'name country state-province')
-        .skip((page - 1) * this.limit)
-        .limit(this.limit),
-    );
+    const result = await this.universityModel
+      .find({ country }, 'name country state-province')
+      .skip((page - 1) * this.limit)
+      .limit(this.limit);
+    if (result.length !== 0) {
+      return this.refactor(result);
+    } else {
+      throw new NotFoundException({
+        message: 'Não há nenhuma universidade cadastrada.',
+      });
+    }
   }
 
   async findOne(id: string) {
     const result = await this.universityModel.findById(id);
-    if (!result) {
-      return [];
-    } else {
+    if (result) {
       return {
         id: result._id,
         domínios: result.domains,
@@ -55,15 +70,40 @@ export class UniversityService {
         nome: result.name,
         estado: result['state-province'],
       };
+    } else {
+      throw new NotFoundException({
+        message: `Não há nenhuma universidade cadastrada com o id ${id}.`,
+      });
     }
   }
 
   async update(id: string, updateUniversityDto: UpdateUniversityDto) {
-    return this.universityModel.updateOne({ _id: id }, updateUniversityDto);
+    const result = await this.universityModel.updateOne(
+      { _id: id },
+      updateUniversityDto,
+    );
+    if (result.matchedCount !== 0) {
+      return {
+        message: `Alteração no registro com id ${id} efetuada com sucesso.`,
+      };
+    } else {
+      throw new NotFoundException({
+        message: `Não foi encontrado nenhum registro com o id ${id}`,
+      });
+    }
   }
 
-  remove(id: string) {
-    return this.universityModel.deleteOne({ _id: id });
+  async remove(id: string) {
+    const result = await this.universityModel.deleteOne({ _id: id });
+    if (result.deletedCount !== 0) {
+      return {
+        message: `Remoção do registro com id ${id} efetuada com sucesso.`,
+      };
+    } else {
+      throw new NotFoundException({
+        message: `Não foi encontrado nenhum registro com o id ${id}`,
+      });
+    }
   }
 
   private refactor(universities: any) {

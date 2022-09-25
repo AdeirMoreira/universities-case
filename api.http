@@ -20,18 +20,18 @@ GET http://localhost:3000/universities/s?country=Brazil&page=1
 GET http://localhost:3000/universities/55153a8014829a865bbf700d
 
 ### edit by id
-PATCH http://localhost:3000/universities/507f191e810c19729de860ea
+PATCH http://localhost:3000/universities/632fa42d0200cc9cdfbea285
 Content-Type: application/json
 
 {
-    "domains": ["teste"], 
+    "domains": ["testew"], 
     "alpha_two_code": "te", 
     "web_pages": ["http://www.teste.com"], 
     "name": "Insituto Universitario do teste"
 }
 
 ### delete by id
-DELETE http://localhost:3000/universities/632f4439d764db069af0b5f7
+DELETE http://localhost:3000/universities/632fa42d0200cc9cdfbea285
 
 ### populate all
 POST http://localhost:3000/database
