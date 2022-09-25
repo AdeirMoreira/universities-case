@@ -33,9 +33,10 @@ git clone https://github.com/AdeirMoreira/universities-case.git
 cd universities-case
 ```
 
-Para rodar o projeto você precisará do Node e do NestJS na sua máquina
+Para rodar o projeto você precisará do Node e do NestJS na sua máquina além de uma string de conexão com o MongoDB
 - [NodeJS](https://nodejs.org/pt-br/download/) 
 - [NestJS](https://docs.nestjs.com/)
+- [MongoDB](https://www.mongodb.com/)
 
 Para instalar o Nest rode o comando:
 ```
@@ -45,6 +46,12 @@ Para instalar as dependêcias do projeto:
 ```
 npm install
 ```
+Para se conectar ao seu banco de dados MongoDB. API não funcionará sem essa conexão.
+```
+renomeie o arquivo .exemple.env para .env e preencha a variável de ambiente MONGO_URI com sua string de conexão com o MongoDB.
+```
+ 
+
 ## Executar o projeto 🔛
 
 Para rodar o servidor na porta 3000
@@ -56,7 +63,7 @@ npm run start
 
 Com o servidor online, a documentação detalhada sobre cada endpoint produzida com o Swagger pode ser encontrada no link http://localhost:3000/docs
 
-Caso deseje começar a utilizar a API com o banco de dados populado, você pode popula-lo de duas formas:
+Caso deseje começar a utilizar a API com o banco de dados populado, você pode popula-lo de duas formas, escolha a que preferir:
 - 1° Por meio do endpoint 
 ```
  Popular -> POST http://localhost:3000/database
@@ -70,8 +77,8 @@ Caso deseje começar a utilizar a API com o banco de dados populado, você pode 
 Ambas as formas popularão o banco de dados com todos os registros das universidades da América do Sul
 
 ## Testando os endpoints ▶
-Voçe pode testar os endpoints da API de duas formas:
-- 1° Por meio  documentação 
+Voçe pode testar os endpoints da API de duas formas, escolha a que preferir::
+- 1° Por meio da documentação Swagger
 <p align="center">
   <img src="https://user-images.githubusercontent.com/98994187/192119055-49890f50-47c0-4089-a3dd-f88195d6c081.png" width="600" height="400" alt="Nest Logo" />
 </p>
